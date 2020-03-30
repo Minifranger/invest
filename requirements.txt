@@ -1,2 +1,2 @@
 boto3
-requests==2.23.0
+alpha-vantage==2.1.3

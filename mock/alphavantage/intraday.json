@@ -1,8 +1,6 @@
 {
   "pathParameters": {
-    "function": "TIME_SERIES_INTRADAY",
     "symbol": "AIR.PAR",
-    "interval": "1min",
-    "apikey": ""
+    "interval": "1min"
   }
 }
