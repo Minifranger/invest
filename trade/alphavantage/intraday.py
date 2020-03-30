@@ -1,6 +1,7 @@
 import os
 import json
 import logging
+import boto3
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -8,7 +9,7 @@ logger.setLevel(logging.INFO)
 client = boto3.resource('dynamodb')
 
 
-def get(event, context):
+def intraday(event, context):
     logger.info('event : {event}'.format(event=event))
     path, = validate_params(path=event.get('pathParameters'))
 
