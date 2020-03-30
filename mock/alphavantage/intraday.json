@@ -1,6 +1,8 @@
 {
   "pathParameters": {
-    "symbol": "AIR.PAR",
+    "symbol": "AIR.PAR"
+  },
+  "queryStringParameters": {
     "interval": "1min"
   }
 }

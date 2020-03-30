@@ -11,7 +11,7 @@ logger.setLevel(logging.INFO)
 
 def intraday(event, context):
     logger.info('event : {event}'.format(event=event))
-    path, = validate_params(path=event.get('pathParameters'))
+    path, query = validate_params(path=event.get('pathParameters'), query=event.get('queryStringParameters'))
 
     symbol = path.get('symbol')
     if not symbol:
@@ -20,7 +20,7 @@ def intraday(event, context):
     logger.info('Getting stock intraday {symbol}'.format(symbol=symbol))
 
     try:
-        result = ALPHAVANTAGE_TS.get_intraday(**event.get('pathParameters'))
+        result = ALPHAVANTAGE_TS.get_intraday(**path, **query)
         print(result)
         # if not result.get('Item'):
         #     return success(status_code=204, body=json.dumps(result.get('Item'), cls=DecimalEncoder))
