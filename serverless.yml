@@ -1,4 +1,4 @@
-service: trade
+service: invest
 
 package:
   individually: true
@@ -18,7 +18,7 @@ provider:
 
   iamRoleStatements:
     - Effect: Allow
-      Action: ssm:GetParameters
+      Action: ssm:GetParameter
       Resource:
        - "arn:aws:ssm:${opt:region, self:provider.region}:*:parameter/${self:provider.environment.ALPHAVANTAGE_SECRET}"
 
@@ -37,7 +37,7 @@ provider:
 
 functions:
   intraday:
-    handler: trade/alphavantage/intraday.intraday
+    handler: invest/alphavantage/intraday.intraday
     events:
       - http:
           path: alphavantage/intraday/{symbol}
