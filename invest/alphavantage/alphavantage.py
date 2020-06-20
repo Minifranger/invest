@@ -9,5 +9,5 @@ class Alphavantage(TimeSeries):
 
     def __init__(self):
         self.key = boto3.client('ssm').get_parameter(Name=os.environ['ALPHAVANTAGE_SECRET'], WithDecryption=True).get(
-            'Parameters').get('Value')
+            'Parameter').get('Value')
         super().__init__(key=self.key)
