@@ -3,7 +3,7 @@ import json
 import logging
 import boto3
 from invest.alphavantage.alphavantage import Alphavantage
-from invest.utils import validate_params, failure
+from utils import success, failure, validate_params
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
